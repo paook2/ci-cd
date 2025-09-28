@@ -1,0 +1,24 @@
+name: Verificar Edad
+run-name: Verificar edad con workflow dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      edad:
+        description: 'Ingresa tu edad'
+        required: true
+        type: number
+
+jobs:
+  verificar-edad:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Verificar si es mayor de 18
+        run: |
+          if [ ${{ github.event.inputs.edad }} -ge 18 ]; then
+            echo "¡Eres mayor de 18 años!"
+          else
+            echo "Lo siento, eres menor de 18 años."
+          fi
