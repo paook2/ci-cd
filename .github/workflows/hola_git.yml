@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
 
       - name: Imprimir mensaje en consola
         run: echo "¡Hola Mundo desde GitHub Actions!"
